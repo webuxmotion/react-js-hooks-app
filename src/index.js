@@ -1,7 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from 'react-dom';
+import { AppContextProvider } from './context/AppContext';
 
 import {App} from "./App";
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+render(
+    <AppContextProvider>
+      <App />
+    </AppContextProvider>,
+    document.getElementById('root')
+  );
